@@ -29,9 +29,22 @@
 		23C798882E343FC400583B05 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		23C798922E34425A00583B05 /* Exceptions for "YouTubeApiApp" folder in "YouTubeApiApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 23C798622E3439D200583B05 /* YouTubeApiApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		23C798652E3439D200583B05 /* YouTubeApiApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				23C798922E34425A00583B05 /* Exceptions for "YouTubeApiApp" folder in "YouTubeApiApp" target */,
+			);
 			path = YouTubeApiApp;
 			sourceTree = "<group>";
 		};
@@ -186,6 +199,7 @@
 /* Begin XCBuildConfiguration section */
 		23C7986C2E3439D400583B05 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23C798882E343FC400583B05 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -250,6 +264,7 @@
 		};
 		23C7986D2E3439D400583B05 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23C798882E343FC400583B05 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -315,6 +330,7 @@
 				DEVELOPMENT_TEAM = HCX43DJU6Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YouTubeApiApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -343,6 +359,7 @@
 				DEVELOPMENT_TEAM = HCX43DJU6Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YouTubeApiApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

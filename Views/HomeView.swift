@@ -13,6 +13,10 @@ struct HomeView: View {
             FeedView()
         }
         .padding()
+        .onAppear(perform: {
+            print(Bundle.main.infoDictionary?["API_KEY"] as? String
+                  ?? "Cant find it!")
+        })
     }
 }
 
