@@ -14,6 +14,7 @@
 		23C7987C2E343B6700583B05 /* VideoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7987B2E343B6700583B05 /* VideoDetailView.swift */; };
 		23C7987E2E343B9F00583B05 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7987D2E343B9F00583B05 /* Video.swift */; };
 		23C798802E343BAE00583B05 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7987F2E343BAE00583B05 /* Playlist.swift */; };
+		23C798892E343FC400583B05 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 23C798882E343FC400583B05 /* Config.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		23C7987B2E343B6700583B05 /* VideoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailView.swift; sourceTree = "<group>"; };
 		23C7987D2E343B9F00583B05 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		23C7987F2E343BAE00583B05 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		23C798882E343FC400583B05 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -49,6 +51,7 @@
 		23C7985A2E3439D200583B05 = {
 			isa = PBXGroup;
 			children = (
+				23C798882E343FC400583B05 /* Config.xcconfig */,
 				23C798652E3439D200583B05 /* YouTubeApiApp */,
 				23C798642E3439D200583B05 /* Products */,
 				23C798722E343ADA00583B05 /* Services */,
@@ -157,6 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23C798892E343FC400583B05 /* Config.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
