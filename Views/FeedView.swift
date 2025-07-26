@@ -13,8 +13,10 @@ struct FeedView: View {
     
     var body: some View {
         List(videos) { video in
-            Text(video.snippet?.title ?? "No Title")
+            VideoRowView(video: video)
         }
+        .listStyle(.plain)
+        .scrollIndicators(.hidden)
         .task { // lets you run an async section of code as a background worker
             let videos = await DataService().getVideos()
             self.videos = videos
