@@ -26,26 +26,10 @@ struct Video : Decodable, Identifiable {
     }
 }
 
-struct Snippet : Decodable {
-    var title: String? // ? here represents an optional prop (could be nil)
-    var description: String?
-    var thumbnails: Thumbnails?
-    var resourceId: ResourceId?
-}
 
-struct ResourceId : Decodable {
-    var videoId: String?
-}
 
-struct Thumbnails : Decodable {
-    var maxres: ThumbnailSize?
-    var medium: ThumbnailSize?
-    var high: ThumbnailSize?
-    var standard: ThumbnailSize?
-}
 
-struct ThumbnailSize : Decodable {
-    var url: String?
-    var width: Int
-    var height: Int
-}
+
+
+
+

@@ -40,6 +40,8 @@ struct VideoDetailView: View {
                 // Title and description
                 ScrollView {
                     VStack(alignment: .leading, spacing: 30) {
+                        Text(video.snippet?.resourceId?.videoId ?? "")
+                        
                         Text(video.snippet?.title ?? "")
                             .font(.headline)
                             .bold()

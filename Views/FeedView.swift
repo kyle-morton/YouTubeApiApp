@@ -25,7 +25,7 @@ struct FeedView: View {
         .scrollIndicators(.hidden)
         .padding(.horizontal)
         .task { // lets you run an async section of code as a background worker
-            let videos = await DataService().getVideos()
+            let videos = await DataService().getPlaylistVideos()
             self.videos = videos
         }
         .sheet(item: $selectedVideo) { selectedVid in // opened whenever this var has a value

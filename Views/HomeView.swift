@@ -9,15 +9,19 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        TabView {
-            FeedView()
-                .tabItem{
-                    Image(systemName: "play.square.stack")
-                    Text("Feed")
-                }
-        }
-        .ignoresSafeArea()
-        
+            TabView {
+                FeedView()
+                    .tabItem{
+                        Image(systemName: "play.square.stack")
+                        Text("Feed")
+                    }
+                SearchView()
+                    .tabItem {
+                        Image(systemName: "magnifyingglass")
+                        Text("Search")
+                    }
+            }
+            .ignoresSafeArea()        
     }
 }
 
