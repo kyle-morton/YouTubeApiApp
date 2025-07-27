@@ -12,6 +12,14 @@ struct Video : Decodable, Identifiable {
     // Identifiable - Protocol - allows us to use this type in a swift UI list
     var id: String
     var snippet: Snippet?
+    
+    func getThumbnailUrl() -> String {
+        return snippet?.thumbnails?.high?.url ??
+        snippet?.thumbnails?.medium?.url ??
+        snippet?.thumbnails?.standard?.url ??
+        snippet?.thumbnails?.maxres?.url
+        ?? "";
+    }
 }
 
 struct Snippet : Decodable {
@@ -26,7 +34,10 @@ struct ResourceId : Decodable {
 }
 
 struct Thumbnails : Decodable {
+    var maxres: ThumbnailSize?
     var medium: ThumbnailSize?
+    var high: ThumbnailSize?
+    var standard: ThumbnailSize?
 }
 
 struct ThumbnailSize : Decodable {

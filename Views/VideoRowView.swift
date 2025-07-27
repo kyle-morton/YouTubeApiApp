@@ -12,22 +12,22 @@ struct VideoRowView: View {
     var video : Video
     
     var body: some View {
-        HStack {
-            
-            if let url = URL(string: video.snippet?.thumbnails?.medium?.url ?? "") {
+        VStack(alignment: .leading) {
+            if let url = URL(string: video.getThumbnailUrl()) {
                 AsyncImage(url: url) { image in
                     // Image that's displayed after pulled
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                        .clipShape(RoundedRectangle(cornerRadius: 5))
                 } placeholder: {
                     ProgressView()
                 }
             }
-//            
-//            Text(video.snippet?.title ?? "No Title")
-//                .listRowSeparator(.hidden)
+            Text(video.snippet?.title ?? "N/A")
+                .bold()
+//            Text(video.getThumbnailUrl())
+//                .bold()
         }
 
     }
