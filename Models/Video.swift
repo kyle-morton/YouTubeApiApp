@@ -20,13 +20,17 @@ struct Video : Decodable, Identifiable {
         snippet?.thumbnails?.maxres?.url
         ?? "";
     }
+    
+    func getVideoUrl() -> String {
+        return "https://www.youtube.com/watch?v=\(id)"
+    }
 }
 
 struct Snippet : Decodable {
     var title: String? // ? here represents an optional prop (could be nil)
     var description: String?
     var thumbnails: Thumbnails?
-    var resourceid: ResourceId?
+    var resourceId: ResourceId?
 }
 
 struct ResourceId : Decodable {

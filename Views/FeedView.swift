@@ -23,6 +23,7 @@ struct FeedView: View {
         }
         .listStyle(.plain)
         .scrollIndicators(.hidden)
+        .padding(.horizontal)
         .task { // lets you run an async section of code as a background worker
             let videos = await DataService().getVideos()
             self.videos = videos

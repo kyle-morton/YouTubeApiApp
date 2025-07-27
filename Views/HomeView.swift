@@ -16,7 +16,8 @@ struct HomeView: View {
                     Text("Feed")
                 }
         }
-        .padding()
+        .ignoresSafeArea()
+        
     }
 }
 
