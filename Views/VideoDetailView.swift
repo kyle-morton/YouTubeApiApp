@@ -10,7 +10,7 @@ import YouTubePlayerKit
 
 struct VideoDetailView: View {
     
-    var video: Video
+    var video: VideoResult
     
     
     var body: some View {

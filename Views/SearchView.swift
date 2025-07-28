@@ -11,7 +11,7 @@ import Combine
 struct SearchView: View {
     
     @State var searchTerm:String = ""
-    @State var videos : [Video] = []
+    @State var videos : [VideoResult] = []
     private var dataService = DataService()
     
     

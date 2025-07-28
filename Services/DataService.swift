@@ -24,10 +24,10 @@ struct DataService {
         return "\(baseUrlString)/search?part=snippet&maxResults=\(maxResults)&type=video&q=SEARCH_QUERY=\(videoSearchTerm!)&key=\(apiKey)"
     }
     
-    func searchVideos(videoSearchTerm: String) async -> [Video] {
+    func searchVideos(videoSearchTerm: String) async -> [VideoResult] {
         // bail if we don't have our API key
         guard apiKey != nil else {
-            return [Video]()
+            return [VideoResult]()
         }
         
         let urlString = buildUrl(apiKey: apiKey!, playlistId: nil as String?, videoSearchTerm: videoSearchTerm)!
@@ -42,32 +42,30 @@ struct DataService {
                 
                 let (data, _) = try await session.data(for: request)
                 
-                if let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []),
-                   let json = jsonObject as? [String: Any] {
-                    print("Raw JSON as dictionary:\n\(json)")
-                } else {
-                    print("Failed to parse JSON.")
-                }
-                
                 // Parse the data
                 let decoder = JSONDecoder()
-                let videoResponse = try decoder.decode(Playlist.self, from: data)
+                let videoResponse = try decoder.decode(SearchResponse.self, from: data)
                 
-                return videoResponse.items
+                // Map items to generic video response array
+                let videoResults = videoResponse.items.map { item in
+                    VideoResult(id: item.id?.videoID, snippet: item.snippet)
+                }
+                
+                return videoResults
                 
             } catch {
                 print(error)
             }
         }
         
-        return [Video]()
+        return [VideoResult]()
     }
     
-    func getPlaylistVideos() async -> [Video] { // eventually ask for playlist ID
+    func getPlaylistVideos() async -> [VideoResult] { // eventually ask for playlist ID
         
         // bail if we don't have our API key
         guard apiKey != nil else {
-            return [Video]()
+            return [VideoResult]()
         }
         
         let playlistId = "PLY5YZGatmhWYjWpjG-nA5f3oFPL2gpM1G" // Funhaus Series
@@ -89,9 +87,13 @@ struct DataService {
                 
                 // Parse the data
                 let decoder = JSONDecoder()
-                let videoResponse = try decoder.decode(Playlist.self, from: data)
+                let videoResponse = try decoder.decode(PlaylistResponse.self, from: data)
                 
-                return videoResponse.items
+                let videoResults = videoResponse.items.map { item in
+                    VideoResult(id: item.snippet?.resourceId?.videoId, snippet: item.snippet)
+                }
+                
+                return videoResults
                 
             } catch {
                 print(error)
@@ -99,6 +101,6 @@ struct DataService {
             
         }
 
-        return [Video]()
+        return [VideoResult]()
     }
 }

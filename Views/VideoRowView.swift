@@ -9,7 +9,7 @@ import SwiftUI
 
 struct VideoRowView: View {
     
-    var video : Video
+    var video : VideoResult
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -34,6 +34,6 @@ struct VideoRowView: View {
 }
 
 #Preview {
-    VideoRowView(video: Video(id: "123"))
+    VideoRowView(video: VideoResult(id: "123"))
     Spacer()
 }

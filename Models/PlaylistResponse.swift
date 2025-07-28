@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Playlist : Decodable {
+struct PlaylistResponse : Decodable {
     var items: [Video]
 }

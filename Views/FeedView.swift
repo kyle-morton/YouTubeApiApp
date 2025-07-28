@@ -9,8 +9,8 @@ import SwiftUI
 
 struct FeedView: View {
     
-    @State private var videos: [Video] = []
-    @State private var selectedVideo: Video?
+    @State private var videos: [VideoResult] = []
+    @State private var selectedVideo: VideoResult?
     
     var body: some View {
         List(videos) { video in
